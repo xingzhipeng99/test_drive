@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:test_drive/screens/about.dart';
 import 'package:test_drive/screens/albums.dart';
@@ -12,8 +13,15 @@ import '../screens/product_page.dart';
 class AppMenu extends StatelessWidget {
   const AppMenu({super.key});
 
+  // final String userProfile = 'assets/images/icons/User_Profile.svg';
+
   @override
   Widget build(BuildContext context) {
+    final Widget svg = SvgPicture.asset(
+      'images/icons/User_Profile.svg',
+      semanticsLabel: 'User Profile',
+      colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+    );
     return ListView(
       children: <Widget>[
         DrawerHeader(
@@ -23,10 +31,11 @@ class AppMenu extends StatelessWidget {
           ),
           child: ListTile(
             onTap: () => Navigator.popAndPushNamed(context, '/profile'),
-            leading: const Icon(
-              Icons.account_box,
-              color: Colors.white,
-            ),
+            leading: svg,
+            // leading: const Icon(
+            //   Icons.account_box,
+            //   color: Colors.white,
+            // ),
             title: const Text(
               'Admin',
               style: TextStyle(color: Colors.white),
