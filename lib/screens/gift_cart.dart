@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/providers/cart_provider.dart';
+import 'package:test_drive/providers/gift_cart_provider.dart';
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+class GiftCartScreen extends StatelessWidget {
+  const GiftCartScreen({super.key});
 
-  static const routeName = '/my-cart';
+  static const routeName = '/gift-cart';
 
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your cart'),
+        title: const Text('Your Gifts'),
       ),
       body: Column(
         children: <Widget>[

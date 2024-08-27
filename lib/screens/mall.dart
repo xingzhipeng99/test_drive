@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -6,16 +7,16 @@ import '../models/product.dart';
 
 // https://www.dhiwise.com/post/flutter-pull-to-refresh-how-to-implement-customize
 // https://www.dhiwise.com/post/infinite-list-in-flutter-scroll-more-load-less
-class ProductsPage extends StatefulWidget {
-  const ProductsPage({super.key});
+class MallScreen extends StatefulWidget {
+  const MallScreen({super.key});
 
-  static const routeName = '/products';
+  static const routeName = '/mall';
 
   @override
-  State<StatefulWidget> createState() => _ProductsPageState();
+  State<StatefulWidget> createState() => _MallScreenState();
 }
 
-class _ProductsPageState extends State<ProductsPage> {
+class _MallScreenState extends State<MallScreen> {
   final _scrollController = ScrollController();
   final _list = <Product>[];
   int _currentPage = 1;
@@ -89,7 +90,7 @@ class _ProductsPageState extends State<ProductsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Products'),
+        title: const Text('Mall'),
       ),
       body: RefreshIndicator(
         onRefresh: _handleRefresh,
@@ -206,19 +207,21 @@ class _ProductsPageState extends State<ProductsPage> {
 Widget getProductTags(List<String> tags) {
   return Row(
     children: tags
-        .map((tag) => Padding(
-              padding: const EdgeInsets.only(
-                right: 8,
-                bottom: 8,
-              ),
-              child: Chip(
-                elevation: 20,
-                padding: const EdgeInsets.all(4),
-                backgroundColor: Colors.greenAccent[100],
-                shadowColor: Colors.black,
-                label: Text(tag),
-              ),
-            ))
+        .map(
+          (tag) => Padding(
+            padding: const EdgeInsets.only(
+              right: 8,
+              bottom: 8,
+            ),
+            child: Chip(
+              elevation: 20,
+              padding: const EdgeInsets.all(4),
+              backgroundColor: Colors.greenAccent[100],
+              shadowColor: Colors.black,
+              label: Text(tag),
+            ),
+          ),
+        )
         .toList(),
   );
 }

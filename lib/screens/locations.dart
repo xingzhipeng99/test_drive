@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class LocationsPage extends StatefulWidget {
-  const LocationsPage({super.key});
+class LocationsScreen extends StatefulWidget {
+  const LocationsScreen({super.key});
 
   static const routeName = '/locations';
 
   @override
   State<StatefulWidget> createState() {
-    return _LocationsPageState();
+    return _LocationsScreenState();
   }
 }
 
-class _LocationsPageState extends State<LocationsPage> {
+class _LocationsScreenState extends State<LocationsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

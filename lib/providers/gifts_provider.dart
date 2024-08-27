@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../models/product.dart';
 
-class ProductsProvider with ChangeNotifier {
+class GiftsProvider with ChangeNotifier {
   final List<Product> _items = [
     Product(
       1,

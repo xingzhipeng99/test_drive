@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/providers/products_provider.dart';
+import 'package:test_drive/providers/gifts_provider.dart';
 
-class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+class GiftDetailScreen extends StatelessWidget {
+  const GiftDetailScreen({super.key});
 
-  static const routeName = '/product-detail';
+  static const routeName = '/gift-detail';
 
   @override
   Widget build(BuildContext context) {
     final productId = ModalRoute.of(context)!.settings.arguments as int;
-    final loadedProduct = Provider.of<ProductsProvider>(context, listen: false)
-        .findById(productId);
+    final loadedProduct =
+        Provider.of<GiftsProvider>(context, listen: false).findById(productId);
     return Scaffold(
       appBar: AppBar(
         title: Text(loadedProduct.title),
@@ -19,7 +19,7 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+            SizedBox(
               height: 300,
               width: double.infinity,
               child: Image.network(

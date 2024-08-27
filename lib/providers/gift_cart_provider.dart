@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class CartItem {
+class GiftCartItem {
   final int id;
   final String title;
   final int quantity;
   final double price;
 
-  CartItem({
+  GiftCartItem({
     required this.id,
     required this.title,
     required this.quantity,
@@ -15,9 +15,9 @@ class CartItem {
 }
 
 class CartProvider with ChangeNotifier {
-  final Map<int, CartItem> _items = {};
+  final Map<int, GiftCartItem> _items = {};
 
-  Map<int, CartItem> get items {
+  Map<int, GiftCartItem> get items {
     return {..._items};
   }
 
@@ -25,7 +25,7 @@ class CartProvider with ChangeNotifier {
     if (_items.containsKey(productId)) {
       _items.update(
         productId,
-        (existingCartItem) => CartItem(
+        (existingCartItem) => GiftCartItem(
           id: existingCartItem.id,
           title: existingCartItem.title,
           quantity: existingCartItem.quantity + 1,
@@ -35,7 +35,7 @@ class CartProvider with ChangeNotifier {
     } else {
       _items.putIfAbsent(
         productId,
-        () => CartItem(
+        () => GiftCartItem(
           // id: DateTime.now().toString() as int,
           id: _items.length + 1,
           title: title,

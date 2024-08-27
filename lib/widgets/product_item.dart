@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_drive/models/product.dart';
-import 'package:test_drive/providers/cart_provider.dart';
+import 'package:test_drive/providers/gift_cart_provider.dart';
 
-import '../screens/product_detail_screen.dart';
+import '../screens/gift_detail_screen.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key});
@@ -31,7 +31,7 @@ class ProductItem extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             Navigator.of(context).pushNamed(
-              ProductDetailScreen.routeName,
+              GiftDetailScreen.routeName,
               arguments: product.id,
             );
           },

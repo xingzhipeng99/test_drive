@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class AlbumsPage extends StatefulWidget {
-  const AlbumsPage({super.key});
+class AlbumsScreen extends StatefulWidget {
+  const AlbumsScreen({super.key});
 
   static const routeName = '/albums';
 
   @override
-  State<StatefulWidget> createState() => _AlbumsPageState();
+  State<StatefulWidget> createState() => _AlbumsScreenState();
 }
 
-class _AlbumsPageState extends State<AlbumsPage> {
+class _AlbumsScreenState extends State<AlbumsScreen> {
   List<String> items = List.generate(20, (index) => "Item ${index + 1}");
   int refreshedTimes = 0;
 

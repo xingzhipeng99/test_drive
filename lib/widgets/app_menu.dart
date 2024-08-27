@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:test_drive/screens/words.dart';
 import 'package:test_drive/screens/about.dart';
 import 'package:test_drive/screens/albums.dart';
-import 'package:test_drive/screens/cart_screen.dart';
+import 'package:test_drive/screens/gift_cart.dart';
 import 'package:test_drive/screens/locations.dart';
-import 'package:test_drive/screens/products.dart';
+import 'package:test_drive/screens/mall.dart';
 
 import '../screens/cart.dart';
-import '../screens/product_page.dart';
+import '../screens/gift.dart';
 
 class AppMenu extends StatelessWidget {
   const AppMenu({super.key});
@@ -51,16 +52,16 @@ class AppMenu extends StatelessWidget {
           title: const Text('Home'),
         ),
         ListTile(
-          onTap: () =>
-              Navigator.popAndPushNamed(context, ProductsPage.routeName),
+          onTap: () => Navigator.popAndPushNamed(context, MallScreen.routeName),
           leading: const Icon(
-            Icons.card_giftcard,
+            Icons.local_mall,
             color: Colors.blue,
           ),
-          title: const Text('Products'),
+          title: const Text('Mall'),
         ),
         ListTile(
-          onTap: () => {Navigator.popAndPushNamed(context, CartPage.routeName)},
+          onTap: () =>
+              {Navigator.popAndPushNamed(context, CartScreen.routeName)},
           leading: const Icon(
             Icons.shopping_cart,
             color: Colors.blue,
@@ -69,7 +70,7 @@ class AppMenu extends StatelessWidget {
         ),
         ListTile(
           onTap: () =>
-              Navigator.popAndPushNamed(context, LocationsPage.routeName),
+              Navigator.popAndPushNamed(context, LocationsScreen.routeName),
           leading: const FaIcon(
             FontAwesomeIcons.locationArrow,
             color: Colors.blue,
@@ -77,7 +78,8 @@ class AppMenu extends StatelessWidget {
           title: const Text('Locations'),
         ),
         ListTile(
-          onTap: () => Navigator.popAndPushNamed(context, AlbumsPage.routeName),
+          onTap: () =>
+              Navigator.popAndPushNamed(context, AlbumsScreen.routeName),
           leading: const Icon(
             Icons.photo_album,
             color: Colors.blue,
@@ -85,16 +87,7 @@ class AppMenu extends StatelessWidget {
           title: const Text('Albums'),
         ),
         ListTile(
-          onTap: () => Navigator.popAndPushNamed(context, AboutPage.routeName),
-          leading: const Icon(
-            Icons.info,
-            color: Colors.blue,
-          ),
-          title: const Text('About'),
-        ),
-        ListTile(
-          onTap: () =>
-              Navigator.popAndPushNamed(context, ProductPage.routeName),
+          onTap: () => Navigator.popAndPushNamed(context, GiftScreen.routeName),
           leading: const FaIcon(
             FontAwesomeIcons.gift,
             color: Colors.blue,
@@ -102,12 +95,31 @@ class AppMenu extends StatelessWidget {
           title: const Text('Gifts'),
         ),
         ListTile(
-          onTap: () => Navigator.popAndPushNamed(context, CartScreen.routeName),
+          onTap: () =>
+              Navigator.popAndPushNamed(context, GiftCartScreen.routeName),
           leading: const FaIcon(
             FontAwesomeIcons.cartPlus,
             color: Colors.blue,
           ),
           title: const Text('My Gifts'),
+        ),
+        ListTile(
+          onTap: () =>
+              Navigator.popAndPushNamed(context, WordsScreen.routeName),
+          leading: const Icon(
+            Icons.wordpress,
+            color: Colors.blue,
+          ),
+          title: const Text('Words'),
+        ),
+        ListTile(
+          onTap: () =>
+              Navigator.popAndPushNamed(context, AboutScreen.routeName),
+          leading: const Icon(
+            Icons.info,
+            color: Colors.blue,
+          ),
+          title: const Text('About'),
         ),
       ],
     );

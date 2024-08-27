@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/providers/products_provider.dart';
+import 'package:test_drive/providers/gifts_provider.dart';
+
 import '../widgets/product_item.dart';
 
-class ProductsOverviewScreen extends StatelessWidget {
-  const ProductsOverviewScreen({super.key});
+class GiftOverviewScreen extends StatelessWidget {
+  const GiftOverviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final productsData = Provider.of<ProductsProvider>(context);
+    final productsData = Provider.of<GiftsProvider>(context);
     final products = productsData.items;
     return GridView.builder(
       padding: const EdgeInsets.all(10),

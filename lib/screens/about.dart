@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class AboutPage extends StatefulWidget {
-  const AboutPage({super.key});
+class AboutScreen extends StatefulWidget {
+  const AboutScreen({super.key});
 
   static const routeName = '/about';
 
   @override
-  State<StatefulWidget> createState() => _AboutPageState();
+  State<StatefulWidget> createState() => _AboutScreenState();
 }
 
-class _AboutPageState extends State<AboutPage> {
+class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
