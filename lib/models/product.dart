@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+// https://blog.logrocket.com/how-parse-json-strings-flutter/
 part 'product.g.dart';
 
 @JsonSerializable()

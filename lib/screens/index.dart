@@ -14,7 +14,7 @@ class IndexScreen extends StatefulWidget {
 class _IndexScreenState extends State<IndexScreen> {
   @override
   Widget build(BuildContext context) {
-    var colorScheme = Theme.of(context).colorScheme;
+    // var colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: AppBar(
