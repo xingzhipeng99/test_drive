@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../models/chat_models.dart';
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({
+class FeedSearchBar extends StatelessWidget {
+  const FeedSearchBar({
     super.key,
     required this.currentUser,
   });

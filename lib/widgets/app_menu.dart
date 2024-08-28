@@ -9,7 +9,22 @@ import 'package:test_drive/screens/locations.dart';
 import 'package:test_drive/screens/mall.dart';
 
 import '../screens/cart.dart';
+import '../screens/feed.dart';
 import '../screens/gift.dart';
+
+class AppMenuItem {
+  final String route;
+  final Widget title;
+  final IconData iconData;
+  final Color iconColor;
+
+  const AppMenuItem({
+    required this.route,
+    required this.title,
+    required this.iconData,
+    required this.iconColor,
+  });
+}
 
 class AppMenu extends StatelessWidget {
   const AppMenu({super.key});
@@ -23,6 +38,68 @@ class AppMenu extends StatelessWidget {
       semanticsLabel: 'User Profile',
       colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
     );
+    List<AppMenuItem> list = <AppMenuItem>[
+      const AppMenuItem(
+        route: '/',
+        title: Text('Home'),
+        iconData: Icons.home,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: MallScreen.routeName,
+        title: Text('Mall'),
+        iconData: Icons.local_mall,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: CartScreen.routeName,
+        title: Text('Cart'),
+        iconData: Icons.shopping_cart,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: LocationsScreen.routeName,
+        title: Text('Locations'),
+        iconData: FontAwesomeIcons.locationArrow,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: AlbumsScreen.routeName,
+        title: Text('Albums'),
+        iconData: Icons.photo_album,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: GiftScreen.routeName,
+        title: Text('Gifts'),
+        iconData: FontAwesomeIcons.gift,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: GiftCartScreen.routeName,
+        title: Text('My Gifts'),
+        iconData: FontAwesomeIcons.cartPlus,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: WordsScreen.routeName,
+        title: Text('Words'),
+        iconData: Icons.wordpress,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: FeedScreen.routeName,
+        title: Text('Feeds'),
+        iconData: Icons.feed,
+        iconColor: Colors.blue,
+      ),
+      const AppMenuItem(
+        route: AboutScreen.routeName,
+        title: Text('About'),
+        iconData: Icons.info,
+        iconColor: Colors.blue,
+      ),
+    ];
     return ListView(
       children: <Widget>[
         DrawerHeader(
@@ -43,83 +120,19 @@ class AppMenu extends StatelessWidget {
             ),
           ),
         ),
-        ListTile(
-          onTap: () => Navigator.popAndPushNamed(context, '/'),
-          leading: const Icon(
-            Icons.home,
-            color: Colors.blue,
-          ),
-          title: const Text('Home'),
-        ),
-        ListTile(
-          onTap: () => Navigator.popAndPushNamed(context, MallScreen.routeName),
-          leading: const Icon(
-            Icons.local_mall,
-            color: Colors.blue,
-          ),
-          title: const Text('Mall'),
-        ),
-        ListTile(
-          onTap: () =>
-              {Navigator.popAndPushNamed(context, CartScreen.routeName)},
-          leading: const Icon(
-            Icons.shopping_cart,
-            color: Colors.blue,
-          ),
-          title: const Text('Cart'),
-        ),
-        ListTile(
-          onTap: () =>
-              Navigator.popAndPushNamed(context, LocationsScreen.routeName),
-          leading: const FaIcon(
-            FontAwesomeIcons.locationArrow,
-            color: Colors.blue,
-          ),
-          title: const Text('Locations'),
-        ),
-        ListTile(
-          onTap: () =>
-              Navigator.popAndPushNamed(context, AlbumsScreen.routeName),
-          leading: const Icon(
-            Icons.photo_album,
-            color: Colors.blue,
-          ),
-          title: const Text('Albums'),
-        ),
-        ListTile(
-          onTap: () => Navigator.popAndPushNamed(context, GiftScreen.routeName),
-          leading: const FaIcon(
-            FontAwesomeIcons.gift,
-            color: Colors.blue,
-          ),
-          title: const Text('Gifts'),
-        ),
-        ListTile(
-          onTap: () =>
-              Navigator.popAndPushNamed(context, GiftCartScreen.routeName),
-          leading: const FaIcon(
-            FontAwesomeIcons.cartPlus,
-            color: Colors.blue,
-          ),
-          title: const Text('My Gifts'),
-        ),
-        ListTile(
-          onTap: () =>
-              Navigator.popAndPushNamed(context, WordsScreen.routeName),
-          leading: const Icon(
-            Icons.wordpress,
-            color: Colors.blue,
-          ),
-          title: const Text('Words'),
-        ),
-        ListTile(
-          onTap: () =>
-              Navigator.popAndPushNamed(context, AboutScreen.routeName),
-          leading: const Icon(
-            Icons.info,
-            color: Colors.blue,
-          ),
-          title: const Text('About'),
+        ...List.generate(
+          list.length,
+          (index) {
+            return ListTile(
+              onTap: () =>
+                  Navigator.popAndPushNamed(context, list[index].route),
+              leading: Icon(
+                list[index].iconData,
+                color: list[index].iconColor,
+              ),
+              title: list[index].title,
+            );
+          },
         ),
       ],
     );

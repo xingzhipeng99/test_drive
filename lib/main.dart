@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_drive/providers/gift_cart_provider.dart';
 import 'package:test_drive/providers/gifts_provider.dart';
+import 'package:test_drive/screens/feed.dart';
 import 'package:test_drive/screens/words.dart';
 import 'package:test_drive/screens/about.dart';
 import 'package:test_drive/screens/albums.dart';
@@ -12,6 +13,8 @@ import 'package:test_drive/screens/locations.dart';
 import 'package:test_drive/screens/gift_detail_screen.dart';
 import 'package:test_drive/screens/gift.dart';
 import 'package:test_drive/screens/mall.dart';
+
+import 'models/chat_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,6 +51,7 @@ class MyApp extends StatelessWidget {
           GiftDetailScreen.routeName: (ctx) => const GiftDetailScreen(),
           GiftCartScreen.routeName: (ctx) => const GiftCartScreen(),
           WordsScreen.routeName: (ctx) => const WordsScreen(title: 'Words'),
+          FeedScreen.routeName: (ctx) => FeedScreen(currentUser: user_0),
           AboutScreen.routeName: (BuildContext context) => const AboutScreen(),
         },
       ),

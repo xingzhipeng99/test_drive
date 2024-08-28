@@ -13,9 +13,10 @@ class _StarButtonState extends State<StartButton> {
 
   Icon get icon {
     final IconData iconData = state ? Icons.star : Icons.star_outline;
+    final Color color = state ? Colors.blue : Colors.grey;
     return Icon(
       iconData,
-      color: Colors.grey,
+      color: color,
       size: 20,
     );
   }
@@ -35,6 +36,7 @@ class _StarButtonState extends State<StartButton> {
       duration: const Duration(microseconds: 30),
       curve: Curves.decelerate,
       child: FloatingActionButton(
+        heroTag: UniqueKey(),
         elevation: 0,
         shape: const CircleBorder(),
         backgroundColor: _colorTheme.surface,

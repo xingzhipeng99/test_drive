@@ -13,7 +13,7 @@ class MallScreen extends StatefulWidget {
   static const routeName = '/mall';
 
   @override
-  State<StatefulWidget> createState() => _MallScreenState();
+  State<MallScreen> createState() => _MallScreenState();
 }
 
 class _MallScreenState extends State<MallScreen> {

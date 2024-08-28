@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Attachment {
   final String url;
 
@@ -45,5 +47,15 @@ class Email {
     required this.content,
     this.replies = 0,
     this.attachments = const [],
+  });
+}
+
+class Destination {
+  final IconData icon;
+  final String label;
+
+  const Destination({
+    required this.icon,
+    required this.label,
   });
 }
