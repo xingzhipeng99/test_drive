@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:test_drive/widgets/email_widget.dart';
-import 'package:test_drive/widgets/search_bar.dart';
 
 import '../models/chat_data.dart' as data;
 import '../models/chat_models.dart';

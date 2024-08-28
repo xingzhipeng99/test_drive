@@ -1,5 +1,4 @@
 // https://codelabs.developers.google.com/codelabs/flutter-animated-responsive-layout?hl=zh-cn#3
-
 import 'package:flutter/material.dart';
 import 'package:test_drive/animations/animation.dart';
 import 'package:test_drive/animations/list_detail_transition.dart';
@@ -9,7 +8,6 @@ import 'package:test_drive/widgets/disappearing_navigation_rail.dart';
 import 'package:test_drive/widgets/email_list_view.dart';
 import 'package:test_drive/widgets/reply_list_view.dart';
 
-import '../models/chat_data.dart';
 import '../models/chat_models.dart';
 import '../widgets/search_bar.dart';
 
@@ -134,33 +132,6 @@ class _FeedScreenState extends State<FeedScreen>
           });
         },
       ),
-      // floatingActionButton: wideScreen
-      //     ? null
-      //     : FloatingActionButton(
-      //         heroTag: UniqueKey(),
-      //         onPressed: () {},
-      //         backgroundColor: _colorScheme.tertiaryContainer,
-      //         foregroundColor: _colorScheme.onTertiaryContainer,
-      //         child: const Icon(Icons.add),
-      //       ),
-      // bottomNavigationBar: wideScreen
-      //     ? null
-      //     : NavigationBar(
-      //         elevation: 0,
-      //         backgroundColor: Colors.white,
-      //         selectedIndex: selectedIndex,
-      //         destinations: destinations.map<NavigationDestination>((d) {
-      //           return NavigationDestination(
-      //             icon: Icon(d.icon),
-      //             label: d.label,
-      //           );
-      //         }).toList(),
-      //         onDestinationSelected: (index) {
-      //           setState(() {
-      //             selectedIndex = index;
-      //           });
-      //         },
-      //       ),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:test_drive/animations/animation.dart';
 
 class ListDetailTransition extends StatefulWidget {
